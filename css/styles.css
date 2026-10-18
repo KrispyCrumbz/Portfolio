@@ -188,6 +188,12 @@ body {
   background: var(--slot);
 }
 
+/* Compact button for links and actions inside panels. */
+.px--small {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
 /* Day/night switch, pinned to the top-right corner. */
 .px--mode {
   position: fixed;
@@ -306,6 +312,61 @@ p {
   min-width: 0;
   font-weight: 600;
   overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Project and experience cards
+   -------------------------------------------------------------------------- */
+
+.card.locked {
+  opacity: 0.8;                  /* dimmed placeholder */
+}
+
+/* Title on the left, date on the right; wraps on narrow screens. */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 12px;
+}
+
+.points {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.points li {
+  margin-bottom: 4px;
+}
+
+/* Language and tool tags. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 1px 8px;
+  font-size: 14px;
+  background: var(--panel);
+  box-shadow: inset 0 0 0 2px var(--panel-lo);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 3px;                  /* room for the buttons' outline */
+}
+
+.links--flush {
+  margin-top: 0;
 }
 
 /* --------------------------------------------------------------------------

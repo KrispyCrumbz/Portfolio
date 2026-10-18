@@ -47,6 +47,8 @@
 
       <header class="bar">
         <button class="px px--tab" type="button" data-go="about">About</button>
+        <button class="px px--tab" type="button" data-go="projects">Projects</button>
+        <button class="px px--tab" type="button" data-go="experience">Experience</button>
         <button class="px px--tab" type="button" data-go="menu">Menu</button>
       </header>
 
@@ -70,6 +72,87 @@
 
           <p>I build web tools and browser extensions. So far that means a Chrome extension that flags misinformation, sponsored content and AI-generated imagery, and a tax estimator for Australian income. The estimator started as a prototype for Deductly, a larger personal finance platform I'm working on.</p>
           <p>Before university I spent time in a robotics workshop and on two multidisciplinary engineering projects, which is where I learned to work in a team and debug things that are physically in front of me.</p>
+        </article>
+
+        <!-- ---------- Projects ---------- -->
+        <article class="panel" id="p-projects" hidden>
+          <h2>Projects</h2>
+
+          <div class="card recess">
+            <div class="head"><h3>VerifAI</h3><span class="meta">May 2026</span></div>
+            <p class="meta">Browser content risk detection extension · RMIT University project</p>
+            <ul class="points">
+              <li>Sole developer for the implementation and the GitHub repository, inside a multidisciplinary project team.</li>
+              <li>Rule-based Chrome extension (Manifest V3) that analyses a page for misinformation indicators, sponsored content and AI-generated imagery.</li>
+              <li>DOM parsing, keyword detection, contextual highlighting, visual risk indicators and interactive UI components.</li>
+            </ul>
+            <ul class="chips">
+              <li class="chip">JavaScript</li>
+              <li class="chip">HTML</li>
+              <li class="chip">CSS</li>
+              <li class="chip">Chrome Extensions API</li>
+            </ul>
+            <div class="links">
+              <a class="px px--small" href="https://github.com/KrispyCrumbz/VerifAI" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="card recess">
+            <div class="head"><h3>Taxpert</h3><span class="meta">October 2025</span></div>
+            <p class="meta">Australian tax return estimator · Personal project</p>
+            <ul class="points">
+              <li>Responsive web app that estimates Australian income tax outcomes with client-side calculations.</li>
+              <li>Input validation and dynamic result updates, with the interface built around usability.</li>
+              <li>Deployed publicly on GitHub Pages.</li>
+            </ul>
+            <ul class="chips">
+              <li class="chip">HTML</li>
+              <li class="chip">CSS</li>
+              <li class="chip">JavaScript</li>
+            </ul>
+            <div class="links">
+              <a class="px px--small" href="https://github.com/KrispyCrumbz/Taxpert" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+
+          <!-- Placeholder card: dimmed with .locked until there is something to show. -->
+          <div class="card recess locked">
+            <div class="head"><h3>Deductly</h3><span class="meta">Planned</span></div>
+            <p class="meta">Personal finance platform · Personal project</p>
+            <p>A larger platform that grows out of the Taxpert prototype. Details to come.</p>
+          </div>
+        </article>
+
+        <!-- ---------- Experience ---------- -->
+        <article class="panel" id="p-experience" hidden>
+          <h2>Experience</h2>
+
+          <div class="label">Work experience</div>
+          <div class="card recess">
+            <div class="head"><h3>Special Patterns Victoria</h3><span class="meta">2021</span></div>
+            <p class="meta">Engineering work experience · Braeside, VIC</p>
+            <ul class="points">
+              <li>Helped build and operate a robotic ice cream serving unit inside a precision manufacturing workshop that makes robotic trimming, tooling and patterns.</li>
+              <li>Assisted engineers and technicians with assembly, calibration and troubleshooting of robotic components during setup and live operation.</li>
+              <li>Gained hands-on exposure to robotics integration, mechanical-electrical interfacing and workshop safety.</li>
+            </ul>
+          </div>
+
+          <div class="label">Engineering projects</div>
+          <div class="card recess">
+            <div class="head"><h3>Australian Space Agency: Lunar Habitat Project</h3><span class="meta">Aug – Oct 2023</span></div>
+            <p>Worked in a multidisciplinary team to design a sustainable lunar habitat, researching in-situ resource utilisation and autonomous construction methods.</p>
+          </div>
+          <div class="card recess">
+            <div class="head"><h3>Engineers Without Borders Australia Challenge</h3><span class="meta">Mar – Jun 2023</span></div>
+            <p>Designed a sustainable infrastructure solution to improve year-round river access for rural Cambodian communities, balancing environmental, cultural and economic constraints.</p>
+          </div>
+
+          <div class="label">Education</div>
+          <div class="card recess">
+            <div class="head"><h3>RMIT University, Melbourne</h3><span class="meta">Expected 2028</span></div>
+            <p class="meta">Bachelor of Software Engineering (Professional) · GPA 3.3 / 4.0</p>
+          </div>
         </article>
 
       </div>
