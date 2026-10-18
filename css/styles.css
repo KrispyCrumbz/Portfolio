@@ -318,10 +318,6 @@ p {
    Project and experience cards
    -------------------------------------------------------------------------- */
 
-.card.locked {
-  opacity: 0.8;                  /* dimmed placeholder */
-}
-
 /* Title on the left, date on the right; wraps on narrow screens. */
 .head {
   display: flex;
@@ -367,6 +363,10 @@ p {
 
 .links--flush {
   margin-top: 0;
+}
+
+.fineprint {
+  margin: 10px 0 0;
 }
 
 /* --------------------------------------------------------------------------
