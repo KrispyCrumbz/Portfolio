@@ -6,6 +6,12 @@ A personal portfolio site built with plain HTML, CSS and JavaScript, hosted on G
 
 Work in progress. This first commit is just the page shell, so the site has something to serve from day one.
 
+## View Demo
+
+https://krispycrumbz.github.io/Portfolio/
+
 ## Run locally
 
 Open `index.html` in a browser. There is no build step.
+
+
