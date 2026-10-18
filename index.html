@@ -6,14 +6,34 @@
   <meta name="description" content="Portfolio of Yash Kishore, a software engineering student at RMIT University in Melbourne.">
   <title>Yash Kishore</title>
 
+  <!-- Pixel fonts from Google Fonts: Silkscreen for labels, Pixelify Sans for text. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen:wght@400;700&display=swap">
+
   <!-- Stylesheets: design tokens first (colours and fonts), then layout and components. -->
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main class="shell">
-    <h1>Yash Kishore</h1>
-    <p>Software engineering student at RMIT, Melbourne</p>
-    <p>Hello World?</p>
+  <main class="stage">
+
+    <!-- ================= TITLE SCREEN ================= -->
+    <section class="title" id="title" aria-label="Title screen">
+      <h1 class="logo"><span>Yash</span><span>Kishore</span></h1>
+      <p class="tagline">Software engineering student at RMIT, Melbourne</p>
+
+      <!-- Each button names the panel it opens in data-go (see js/nav.js). -->
+      <nav class="menu" id="menu" aria-label="Main menu">
+        <button class="px px--menu" type="button" data-go="about">About</button>
+        <button class="px px--menu" type="button" data-go="projects">Projects</button>
+        <button class="px px--menu" type="button" data-go="skills">Skills</button>
+        <button class="px px--menu" type="button" data-go="experience">Experience</button>
+        <button class="px px--menu" type="button" data-go="contact">Contact</button>
+      </nav>
+
+      <p class="hint">Tap a button to explore.</p>
+    </section>
   </main>
 
   <!-- Scripts run in this order. Each file is an independent module with no build step. -->

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   tokens.css
+   Design tokens: every colour and font used by the site is named here.
+   Components in styles.css only ever use these names, so changing a theme
+   means changing values in this file and nothing else.
+   ========================================================================== */
+
+:root {
+
+  /* ---- Fonts ---- */
+  --display: 'Silkscreen', ui-monospace, 'Courier New', monospace;   /* buttons, labels */
+  --body: 'Pixelify Sans', ui-monospace, 'Courier New', monospace;   /* running text */
+
+  /* ---- Stone UI: menu, window, buttons ---- */
+  --panel: #d3cec3;       /* main surface */
+  --panel-hi: #f4f1e8;    /* bevel highlight (top and left edges) */
+  --panel-lo: #7b766b;    /* bevel shadow (bottom and right edges) */
+  --slot: #bdb8ac;        /* recessed surfaces: cards and inventory slots */
+  --outline: #2a2722;     /* hard pixel outline */
+  --ink: #26231f;         /* text */
+  --ink-soft: #565045;    /* secondary text */
+  --sel: #3f8a4c;         /* hovered or selected item */
+  --sel-ink: #ffffff;     /* text on --sel */
+  --focus: #1d5bd6;       /* keyboard focus ring */
+
+  /* ---- Title screen text ---- */
+  --title: #ffffff;
+  --gold: #f6c23e;
+  --title-shadow: #2a2722;
+
+  /* ---- Landscape (also the page background; js/scene.js reads these) ---- */
+  --sky-a: #6db9e6;       /* top of the sky */
+  --sky-b: #b5e0f1;
+  --sky-c: #e4f2e6;       /* horizon */
+  --hill-far: #86b99a;
+  --hill-near: #5a9a62;
+  --ground: #437d4f;
+  --leaf: #2f6b43;
+  --trunk: #6b4a2f;
+  --sun: #ffd25e;
+  --cloud: #ffffff;
+}
