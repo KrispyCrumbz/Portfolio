@@ -39,6 +39,7 @@
   canvas.height = HEIGHT;
 
   let palette = {};        // token name -> colour string, refreshed by readPalette()
+  let isNight = false;     // true when the active theme sets --night: 1
 
   /** Copy the current token values from CSS into the palette. */
   function readPalette() {
@@ -46,6 +47,21 @@
     TOKEN_NAMES.forEach(function (name) {
       palette[name] = styles.getPropertyValue('--' + name).trim();
     });
+    isNight = styles.getPropertyValue('--night').trim() === '1';
+  }
+
+  /* ---------- Stars (night only) ---------- */
+
+  // Tiny seeded random generator, so the star field is identical on every load.
+  let seed = 7;
+  function random() {
+    seed = (seed * 16807) % 2147483647;
+    return seed / 2147483647;
+  }
+
+  const STARS = [];
+  for (let i = 0; i < 46; i++) {
+    STARS.push([Math.floor(random() * WIDTH), Math.floor(random() * 58)]);
   }
 
   /* ---------- Drawing helpers ---------- */
@@ -97,6 +113,15 @@
     }
   }
 
+  function drawStars(time) {
+    STARS.forEach(function (star, i) {
+      // Every fifth star blinks off in turn, which reads as twinkling.
+      if ((i * 7 + Math.floor(time / 700)) % 5 !== 0) {
+        rect(palette.sun, star[0], star[1], 1, 1);
+      }
+    });
+  }
+
   function drawClouds(time) {
     CLOUDS.forEach(function (cloud) {
       const x = ((cloud[0] + time * 0.04 * cloud[2]) % (WIDTH + 40)) - 20;   // wraps around
@@ -146,7 +171,11 @@
   /** Draw one complete frame. `time` is in milliseconds. */
   function draw(time) {
     drawSky();
-    drawClouds(time);
+    if (isNight) {
+      drawStars(time);
+    } else {
+      drawClouds(time);
+    }
     drawSun();
     drawHills();
     drawTrees();
@@ -167,5 +196,11 @@
 
   readPalette();
   draw(0);                 // first frame immediately, so there is never a blank canvas
+
+  // js/theme.js announces colour changes with this event.
+  document.addEventListener('themechange', function () {
+    readPalette();
+    draw(performance.now());
+  });
   requestAnimationFrame(loop);
 })();

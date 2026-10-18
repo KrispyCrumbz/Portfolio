@@ -19,6 +19,9 @@
   <!-- Animated pixel landscape. js/scene.js draws into this canvas. -->
   <canvas id="scene" aria-hidden="true"></canvas>
 
+  <!-- Day/night switch. js/theme.js wires it up. -->
+  <button class="px px--mode" id="mode" type="button">Night mode</button>
+
   <main class="stage">
 
     <!-- ================= TITLE SCREEN ================= -->
@@ -41,5 +44,6 @@
 
   <!-- Scripts run in this order. Each file is an independent module with no build step. -->
   <script src="js/scene.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

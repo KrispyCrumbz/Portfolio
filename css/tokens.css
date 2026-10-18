@@ -39,4 +39,77 @@
   --trunk: #6b4a2f;
   --sun: #ffd25e;
   --cloud: #ffffff;
+  --night: 0;             /* 1 switches the scene from clouds to stars */
+}
+
+/* ==========================================================================
+   Dark theme ("night")
+   The same token names with night values. The values are written twice on
+   purpose:
+     1. under the OS preference, unless the visitor picked light explicitly;
+     2. under data-theme="dark", which js/theme.js sets from the toggle.
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --panel: #3b3e4d;
+    --panel-hi: #5d6176;
+    --panel-lo: #1e202b;
+    --slot: #2b2d3a;
+    --outline: #0c0d14;
+    --ink: #ecebf3;
+    --ink-soft: #b0afc4;
+    --sel: #e0ac35;
+    --sel-ink: #1d1a10;
+    --focus: #ffe08a;
+
+    --title: #fff4d0;
+    --gold: #f2c14e;
+    --title-shadow: #0c0d14;
+
+    --sky-a: #0e1432;
+    --sky-b: #1c2350;
+    --sky-c: #3a3f78;
+    --hill-far: #2a3a62;
+    --hill-near: #1d3a4a;
+    --ground: #15303a;
+    --leaf: #0f2a2e;
+    --trunk: #2a2230;
+    --sun: #e8e6d0;        /* becomes the moon */
+    --cloud: #2d3566;
+    --night: 1;
+
+    color-scheme: dark;    /* dark scrollbars and form controls */
+  }
+}
+
+:root[data-theme="dark"] {
+  --panel: #3b3e4d;
+  --panel-hi: #5d6176;
+  --panel-lo: #1e202b;
+  --slot: #2b2d3a;
+  --outline: #0c0d14;
+  --ink: #ecebf3;
+  --ink-soft: #b0afc4;
+  --sel: #e0ac35;
+  --sel-ink: #1d1a10;
+  --focus: #ffe08a;
+
+  --title: #fff4d0;
+  --gold: #f2c14e;
+  --title-shadow: #0c0d14;
+
+  --sky-a: #0e1432;
+  --sky-b: #1c2350;
+  --sky-c: #3a3f78;
+  --hill-far: #2a3a62;
+  --hill-near: #1d3a4a;
+  --ground: #15303a;
+  --leaf: #0f2a2e;
+  --trunk: #2a2230;
+  --sun: #e8e6d0;
+  --cloud: #2d3566;
+  --night: 1;
+
+  color-scheme: dark;
 }

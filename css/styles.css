@@ -172,3 +172,19 @@ body {
   padding: 15px 16px;
   font-size: 15px;
 }
+
+/* Day/night switch, pinned to the top-right corner. */
+.px--mode {
+  position: fixed;
+  z-index: 5;
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  right: max(16px, env(safe-area-inset-right, 0px));
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+/* Reserve a strip at the top for the toggle so it never sits on top of the
+   window, even when the tabs wrap onto two rows on a phone. */
+.stage {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 44px);
+}
