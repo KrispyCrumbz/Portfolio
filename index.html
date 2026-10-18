@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Animated pixel landscape. js/scene.js draws into this canvas. -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+
   <main class="stage">
 
     <!-- ================= TITLE SCREEN ================= -->
@@ -37,5 +40,6 @@
   </main>
 
   <!-- Scripts run in this order. Each file is an independent module with no build step. -->
+  <script src="js/scene.js"></script>
 </body>
 </html>
