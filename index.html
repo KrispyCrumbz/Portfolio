@@ -48,6 +48,7 @@
       <header class="bar">
         <button class="px px--tab" type="button" data-go="about">About</button>
         <button class="px px--tab" type="button" data-go="projects">Projects</button>
+        <button class="px px--tab" type="button" data-go="skills">Skills</button>
         <button class="px px--tab" type="button" data-go="experience">Experience</button>
         <button class="px px--tab" type="button" data-go="menu">Menu</button>
       </header>
@@ -123,6 +124,14 @@
           </div>
         </article>
 
+        <!-- ---------- Skills ---------- -->
+        <!-- js/skills.js fills #inventory from js/skills-data.js and shows the picked skill in #detail. -->
+        <article class="panel" id="p-skills" hidden>
+          <h2>Skills</h2>
+          <div class="card recess detail" id="detail" aria-live="polite"></div>
+          <div id="inventory"></div>
+        </article>
+
         <!-- ---------- Experience ---------- -->
         <article class="panel" id="p-experience" hidden>
           <h2>Experience</h2>
@@ -163,5 +172,7 @@
   <script src="js/scene.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/skills-data.js"></script>
+  <script src="js/skills.js"></script>
 </body>
 </html>

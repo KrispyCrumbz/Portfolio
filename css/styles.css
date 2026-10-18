@@ -370,6 +370,51 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Skills inventory (Minecraft-style grid of slots)
+   -------------------------------------------------------------------------- */
+
+.detail {
+  min-height: 78px;              /* stops the panel jumping as the text changes */
+}
+
+.detail p {
+  margin: 4px 0 0;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 3px;
+}
+
+.slot {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  background: var(--slot);
+  color: var(--ink);
+  font: 700 13px var(--display);
+  cursor: pointer;
+  box-shadow:
+    inset 3px 3px 0 var(--panel-lo),
+    inset -3px -3px 0 var(--panel-hi);
+}
+
+.slot:hover {
+  background: var(--panel);
+}
+
+/* aria-pressed is set by js/skills.js on the chosen slot. */
+.slot[aria-pressed="true"] {
+  background: var(--sel);
+  color: var(--sel-ink);
+  outline: 3px solid var(--outline);
+  outline-offset: 1px;
+}
+
+/* --------------------------------------------------------------------------
    Small screens
    -------------------------------------------------------------------------- */
 
