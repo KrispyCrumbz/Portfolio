@@ -1,4 +1,4 @@
-# Yash Kishore — Portfolio
+# Yash Kishore - Portfolio
 
 <p align="center">
   <img src="assets/head.png" alt="Personal Logo" width="500">
