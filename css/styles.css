@@ -432,6 +432,42 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Coursework list
+   -------------------------------------------------------------------------- */
+
+.courses {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 8px 12px;
+  min-width: 0;
+}
+
+.course .cn {
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Language chips sit at the right edge of the row. */
+.course .langs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+/* --------------------------------------------------------------------------
    Small screens
    -------------------------------------------------------------------------- */
 
