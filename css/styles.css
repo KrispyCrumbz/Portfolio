@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+/* The hidden attribute must always win. Without this, rules such as
+   .title { display: flex } would keep a "hidden" element on screen. */
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   height: 100%;
@@ -156,7 +162,9 @@ body {
     0 0 0 3px var(--outline);
 }
 
-.px:hover {
+/* aria-current marks the tab for the panel that is open. */
+.px:hover,
+.px[aria-current="page"] {
   background: var(--sel);
   color: var(--sel-ink);
 }
@@ -173,6 +181,13 @@ body {
   font-size: 15px;
 }
 
+/* Tab in the window's top bar. */
+.px--tab {
+  padding: 9px 12px;
+  font-size: 12px;
+  background: var(--slot);
+}
+
 /* Day/night switch, pinned to the top-right corner. */
 .px--mode {
   position: fixed;
@@ -187,4 +202,128 @@ body {
    window, even when the tabs wrap onto two rows on a phone. */
 .stage {
   padding-top: calc(env(safe-area-inset-top, 0px) + 44px);
+}
+
+/* --------------------------------------------------------------------------
+   Window: tab bar on top, scrollable panel below
+   -------------------------------------------------------------------------- */
+
+.win {
+  width: 100%;
+  max-width: 800px;
+  height: min(100%, 640px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  margin: 4px;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 3px;
+}
+
+/* The Menu tab is last, so margin-left: auto pushes it to the right edge. */
+.bar .px--tab:last-child {
+  margin-left: auto;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;                 /* lets a flex child scroll instead of growing */
+  overflow-y: auto;
+  padding: 4px 6px 4px 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Panel text
+   -------------------------------------------------------------------------- */
+
+h2 {
+  margin: 0 0 14px;
+  font: 700 16px var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+h3 {
+  margin: 0;
+  font: 600 18px/1.3 var(--body);
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 12px;
+  max-width: 65ch;               /* comfortable line length */
+}
+
+.meta {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* Small uppercase caption above a group of cards or chips. */
+.label {
+  margin: 18px 0 8px;
+  font: 700 11px var(--display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.card {
+  padding: 14px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.card > .label:first-child {
+  margin-top: 0;
+}
+
+/* Label/value pairs, as in a character sheet. */
+.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 18px;
+  margin: 0;
+}
+
+.stats dt {
+  padding-top: 4px;
+  font: 700 11px var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.stats dd {
+  margin: 0;
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   Small screens
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .win {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .bar {
+    gap: 8px;
+  }
+
+  .px--tab {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
 }

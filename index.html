@@ -40,10 +40,45 @@
 
       <p class="hint">Tap a button to explore.</p>
     </section>
+
+    <!-- ================= PORTFOLIO WINDOW ================= -->
+    <!-- Hidden until a menu button is pressed. Only one .panel is visible at a time. -->
+    <section class="win bevel" id="win" aria-label="Portfolio window" hidden>
+
+      <header class="bar">
+        <button class="px px--tab" type="button" data-go="about">About</button>
+        <button class="px px--tab" type="button" data-go="menu">Menu</button>
+      </header>
+
+      <div class="body" id="body">
+
+        <!-- ---------- About ---------- -->
+        <article class="panel" id="p-about" hidden>
+          <h2>About</h2>
+
+          <div class="card recess">
+            <dl class="stats">
+              <dt>Name</dt><dd>Yash Kishore</dd>
+              <dt>Class</dt><dd>Software engineering student</dd>
+              <dt>School</dt><dd>RMIT University, Melbourne</dd>
+              <dt>Degree</dt><dd>Bachelor of Software Engineering (Professional)</dd>
+              <dt>Graduates</dt><dd>2028</dd>
+              <dt>GPA</dt><dd>3.3 / 4.0</dd>
+              <dt>Base</dt><dd>Aspendale Gardens, Victoria</dd>
+            </dl>
+          </div>
+
+          <p>I build web tools and browser extensions. So far that means a Chrome extension that flags misinformation, sponsored content and AI-generated imagery, and a tax estimator for Australian income. The estimator started as a prototype for Deductly, a larger personal finance platform I'm working on.</p>
+          <p>Before university I spent time in a robotics workshop and on two multidisciplinary engineering projects, which is where I learned to work in a team and debug things that are physically in front of me.</p>
+        </article>
+
+      </div>
+    </section>
   </main>
 
   <!-- Scripts run in this order. Each file is an independent module with no build step. -->
   <script src="js/scene.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
